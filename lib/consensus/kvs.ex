@@ -37,7 +37,7 @@ defmodule Consensus.Kvs do
   def handle_cast({:put, key, value}, state) do
     {
       :noreply,
-      %Consensus.Kvs{values: Map.put(state.values, key, value) }
+      %{state | values: Map.put(state.values, key, value) }
     }
   end
 end
